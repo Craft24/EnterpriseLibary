@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AliPay\AliPayHelperTests.cs" />
+    <Compile Include="EventBus\EventBusTest.cs" />
     <Compile Include="Logging\LoggerTest.cs" />
     <Compile Include="Plugin\Config\BconConfigTest.cs" />
     <Compile Include="Plugin\Domain\AdManager\ADManagerTests.cs" />
