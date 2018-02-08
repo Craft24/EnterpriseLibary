@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Enterprises.Framework.Plugin.Logging;
 using NUnit.Framework;
 using log4net.Appender;
 using log4net.Core;
 using ILogger = Enterprises.Framework.Plugin.Logging.ILogger;
+using Enterprises.Framework.Plugin.Logging;
 
 namespace Enterprises.Test.Logging
 {

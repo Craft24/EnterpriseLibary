@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web.UI;
 using Aop.Api.Util;
-using Enterprises.Framework.Plugin.Logging;
 using Enterprises.Pay.AliPay;
 using Newtonsoft.Json;
 
@@ -14,15 +13,15 @@ namespace Enterprises.Framework.WebTest.AliPay
         protected void Page_Load(object sender, EventArgs e)
         {
             string returnStr = "fail";
-            ILogger logger = NullLogger.Instance;
+            //ILogger logger = NullLogger.Instance;
             try
             {
                 SortedDictionary<string, string> sPara = GetRequestPost();
-                logger.Debug("支付提交参数：" + JsonConvert.SerializeObject(sPara));
+                //logger.Debug("支付提交参数：" + JsonConvert.SerializeObject(sPara));
                 if (sPara.Count > 0)//判断是否有带返回参数
                 {
                     bool verifyResult = AlipaySignature.RSACheckV1(sPara, AlipayConfig.AlipayPublicKey, "utf-8", AlipayConfig.SignType, false);
-                    logger.Debug("验证结果：" + verifyResult);
+                    //logger.Debug("验证结果：" + verifyResult);
                     if(verifyResult)
                     {
                         try
@@ -79,7 +78,7 @@ namespace Enterprises.Framework.WebTest.AliPay
                         }
                         catch (Exception ex)
                         {
-                            logger.Error(ex.ToString());
+                            //logger.Error(ex.ToString());
                             returnStr = "fail";
                         }
                     }
@@ -94,7 +93,7 @@ namespace Enterprises.Framework.WebTest.AliPay
             }
             catch (Exception ex)
             {
-                logger.Error("支付失败" + ex);
+                //logger.Error("支付失败" + ex);
                 Response.Write("error");
             }
         }

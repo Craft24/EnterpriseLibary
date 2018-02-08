@@ -37,14 +37,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\Refrences\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2">
       <HintPath>..\Refrences\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -66,6 +66,30 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Refrences\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.5.0.0-pre-05\lib\netstandard2.0\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.5.0.0-pre-05\lib\netstandard2.0\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Interop.WaitHandles, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Interop.WaitHandles.5.0.0-pre-05\lib\netstandard2.0\Nito.AsyncEx.Interop.WaitHandles.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Oop, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Oop.5.0.0-pre-05\lib\netstandard2.0\Nito.AsyncEx.Oop.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.5.0.0-pre-05\lib\netstandard2.0\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Cancellation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=b924b527e7a731f2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Cancellation.1.0.4\lib\netstandard2.0\Nito.Cancellation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.0.4\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.1.2.3\lib\netstandard2.0\Nito.Disposables.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
     </Reference>
@@ -82,17 +106,23 @@
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC_MSIL\System.Management.Automation\1.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
     </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
@@ -116,6 +146,49 @@
     <Compile Include="AOP2\IContextProperty.cs" />
     <Compile Include="Aop\AOP.cs" />
     <Compile Include="AjaxFramework\NamedProperty.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJob.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJobException.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJobInfo.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJobManager.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJobManagerExtensions.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJobPriority.cs" />
+    <Compile Include="BackgroundJobs\IBackgroundJob.cs" />
+    <Compile Include="BackgroundJobs\IBackgroundJobManager.cs" />
+    <Compile Include="BackgroundJobs\IBackgroundJobStore.cs" />
+    <Compile Include="BackgroundJobs\InMemoryBackgroundJobStore.cs" />
+    <Compile Include="Configuration\DictionaryBasedConfig.cs" />
+    <Compile Include="Configuration\IDictionaryBasedConfig.cs" />
+    <Compile Include="Dependency\BasicConventionalRegistrar.cs" />
+    <Compile Include="Dependency\ConventionalRegistrationConfig.cs" />
+    <Compile Include="Dependency\ConventionalRegistrationContext.cs" />
+    <Compile Include="Dependency\DependencyLifeStyle.cs" />
+    <Compile Include="Dependency\DisposableDependencyObjectWrapperOfT.cs" />
+    <Compile Include="Dependency\IConventionalDependencyRegistrar.cs" />
+    <Compile Include="Dependency\IConventionalRegistrationContext.cs" />
+    <Compile Include="Dependency\IDisposableDependencyObjectWrapper.cs" />
+    <Compile Include="Dependency\IDisposableDependencyObjectWrapperOfT.cs" />
+    <Compile Include="Dependency\IIocManager.cs" />
+    <Compile Include="Dependency\IIocManagerAccessor.cs" />
+    <Compile Include="Dependency\IIocRegistrar.cs" />
+    <Compile Include="Dependency\IIocResolver.cs" />
+    <Compile Include="Dependency\Installers\AbpCoreInstaller.cs" />
+    <Compile Include="Dependency\IocManager.cs" />
+    <Compile Include="Dependency\IocRegistrarExtensions.cs" />
+    <Compile Include="Dependency\IocResolverExtensions.cs" />
+    <Compile Include="Dependency\IScopedIocResolver.cs" />
+    <Compile Include="Dependency\ISingletonDependency.cs" />
+    <Compile Include="Dependency\ITransientDependency.cs" />
+    <Compile Include="Dependency\ScopedIocResolver.cs" />
+    <Compile Include="Dependency\SingletonDependency.cs" />
+    <Compile Include="Exceptions\ExceptionData.cs" />
+    <Compile Include="Json\DateTimeJsonConverter.cs" />
+    <Compile Include="Threading\AbpTimer.cs" />
+    <Compile Include="Threading\AsyncHelper.cs" />
+    <Compile Include="Threading\BackgroundWorkerBase.cs" />
+    <Compile Include="Threading\IBackgroundWorker.cs" />
+    <Compile Include="Threading\IBackgroundWorkerManager.cs" />
+    <Compile Include="Threading\IRunnable.cs" />
+    <Compile Include="BackgroundJobs\NullBackgroundJobStore.cs" />
     <Compile Include="Entity\BinarySerializeCollection.cs" />
     <Compile Include="Entity\KeyValueItem.cs" />
     <Compile Include="Entity\KeyValueItemCollection.cs" />
@@ -133,13 +206,13 @@
     <Compile Include="EventBus\Internals\SingleInstanceHandlerFactory.cs" />
     <Compile Include="EventBus\Internals\TransientEventHandlerFactory.cs" />
     <Compile Include="EventBus\LockExtensions.cs" />
-    <Compile Include="Plugin\Config\BconConfig\BCONConfig.cs" />
-    <Compile Include="Plugin\Config\BconConfig\BCONParser.cs" />
-    <Compile Include="Plugin\Config\ConfigBase.cs" />
-    <Compile Include="Plugin\Config\ConfigFactory.cs" />
-    <Compile Include="Plugin\Config\ConfigSection.cs" />
-    <Compile Include="Plugin\Config\ConfigUtility.cs" />
-    <Compile Include="Plugin\Config\FrameworkConfiguration.cs" />
+    <Compile Include="Configuration\Config\BconConfig\BCONConfig.cs" />
+    <Compile Include="Configuration\Config\BconConfig\BCONParser.cs" />
+    <Compile Include="Configuration\Config\ConfigBase.cs" />
+    <Compile Include="Configuration\Config\ConfigFactory.cs" />
+    <Compile Include="Configuration\Config\ConfigSection.cs" />
+    <Compile Include="Configuration\Config\ConfigUtility.cs" />
+    <Compile Include="Configuration\Config\FrameworkConfiguration.cs" />
     <Compile Include="Plugin\Domain\ADAccountOptions.cs" />
     <Compile Include="Plugin\Domain\AdManager\ADManager.cs" />
     <Compile Include="Plugin\Domain\AdManager\ADObject\BaseObject.cs" />
@@ -236,21 +309,6 @@
     <Compile Include="Plugin\Excel\RepeaterFormatterBuilder.cs" />
     <Compile Include="Plugin\Excel\SheetFormatterContainer.cs" />
     <Compile Include="Plugin\Excel\TableFormatterBuilder.cs" />
-    <Compile Include="Plugin\Logging\CastleLogger.cs" />
-    <Compile Include="Plugin\Logging\CastleLoggerFactory.cs" />
-    <Compile Include="Plugin\Logging\HostEnvironment.cs" />
-    <Compile Include="Plugin\Logging\IHostEnvironment.cs" />
-    <Compile Include="Plugin\Logging\ILogger.cs" />
-    <Compile Include="Plugin\Logging\ILoggerFactory.cs" />
-    <Compile Include="Plugin\Logging\LoggingExtensions.cs" />
-    <Compile Include="Plugin\Logging\LoggingModule.cs" />
-    <Compile Include="Plugin\Logging\LogHelper.cs" />
-    <Compile Include="Plugin\Logging\LogLevel.cs" />
-    <Compile Include="Plugin\Logging\NullLogger.cs" />
-    <Compile Include="Plugin\Logging\NullLoggerFactory.cs" />
-    <Compile Include="Plugin\Logging\OrchardFileAppender.cs" />
-    <Compile Include="Plugin\Logging\OrchardLog4netFactory.cs" />
-    <Compile Include="Plugin\Logging\OrchardLog4netLogger.cs" />
     <Compile Include="Plugin\Mapper\ShengMapper.cs" />
     <Compile Include="Plugin\Mapper\TypeMappingCache.cs" />
     <Compile Include="Plugin\Mapper\TypeMappingDescription.cs" />
@@ -286,7 +344,9 @@
     <Compile Include="AjaxFramework\WebHandler\WebRequestDecoder.cs" />
     <Compile Include="AjaxFramework\WebHandler\WebResponseEncoder.cs" />
     <Compile Include="Plugin\Email\EmailHelper.cs" />
-    <Compile Include="ThreadTasks\ThreadPool.cs" />
+    <Compile Include="Threading\PeriodicBackgroundWorkerBase.cs" />
+    <Compile Include="Threading\RunnableBase.cs" />
+    <Compile Include="Threading\ThreadPool.cs" />
     <Compile Include="UndoRedo\Change.cs" />
     <Compile Include="UndoRedo\Collections\Generic\UndoRedoDictionary.cs" />
     <Compile Include="UndoRedo\Collections\Generic\UndoRedoList.cs" />
@@ -298,6 +358,7 @@
     <Compile Include="UndoRedo\UndoRedoManager.cs" />
     <Compile Include="Utility\Byte64.cs" />
     <Compile Include="Utility\DateTimeHelper.cs" />
+    <Compile Include="Utility\DictionaryExtensions.cs" />
     <Compile Include="Utility\EncodingUtility.cs" />
     <Compile Include="Utility\EncryptUtility.cs" />
     <Compile Include="Utility\EntityUtil.cs" />
@@ -350,6 +411,7 @@
     <Folder Include="Interface\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

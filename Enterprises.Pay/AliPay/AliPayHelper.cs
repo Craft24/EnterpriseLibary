@@ -8,7 +8,6 @@ using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
 using Aop.Api.Util;
-using Enterprises.Framework.Plugin.Logging;
 
 namespace Enterprises.Pay.AliPay
 {

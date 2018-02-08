@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Threading;
 
-namespace Enterprises.Framework.ThreadTasks
+namespace Enterprises.Framework.Threading
 {
     public class ThreadPool
     {

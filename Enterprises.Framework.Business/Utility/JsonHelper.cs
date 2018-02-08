@@ -1,9 +1,13 @@
-﻿namespace Enterprises.Framework.Utility
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
+
+namespace Enterprises.Framework.Utility
 {
     /// <summary>
     /// 分隔Json字符串为字典集合。
     /// </summary>
-    public class JsonHelper
+    public static class JsonHelper
     {
         /// <summary>
         /// 是否Json字符串字符串开始
@@ -445,6 +449,29 @@
                     break;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Converts given object to JSON string.
+        /// </summary>
+        /// <returns></returns>
+        public static string ToJsonString(this object obj, bool camelCase = false, bool indented = false)
+        {
+            var options = new JsonSerializerSettings();
+
+            if (camelCase)
+            {
+                options.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            }
+
+            if (indented)
+            {
+                options.Formatting = Formatting.Indented;
+            }
+
+            options.Converters.Insert(0, new IsoDateTimeConverter());
+
+            return JsonConvert.SerializeObject(obj, options);
         }
     }
 
