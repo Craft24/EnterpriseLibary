@@ -11,11 +11,13 @@ namespace Enterprises.Framework.Threading
     {
         /// <summary>
         /// This event is raised periodically according to Period of Timer.
+        /// 定期事件
         /// </summary>
         public event EventHandler Elapsed;
 
         /// <summary>
         /// Task period of timer (as milliseconds).
+        /// 定时器的任务周期（以毫秒为单位）。
         /// </summary>
         public int Period { get; set; }
 

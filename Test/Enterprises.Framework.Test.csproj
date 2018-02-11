@@ -107,6 +107,7 @@
     <Compile Include="AOPTest\Examples\4.TypeInitializerInterception.cs" />
     <Compile Include="AOPTest\Examples\5. FileOperations.cs" />
     <Compile Include="AOPTest\Examples\IExample.cs" />
+    <Compile Include="BackgroundJob\BackgroundJobManagerTest.cs" />
     <Compile Include="DelegateTest.cs" />
     <Compile Include="DesignModelTest\AbstractFactoryDemo\AbstractFactory.cs" />
     <Compile Include="DesignModelTest\AbstractFactoryDemo\ChineseBonus.cs" />

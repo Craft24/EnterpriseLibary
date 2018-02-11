@@ -42,7 +42,7 @@ namespace Enterprises.Framework.BackgroundJobs
             : base(timer)
         {
             _store = store;
-
+            _iocResolver = iocResolver;
             EventBus = Framework.EventBus.EventBus.Default;
 
             Timer.Period = JobPollPeriod;

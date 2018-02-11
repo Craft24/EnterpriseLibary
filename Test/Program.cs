@@ -11,7 +11,7 @@ using Enterprises.Framework;
 using Enterprises.Framework.Plugin.Office;
 using Enterprises.Framework.Utility;
 using Test.ThreadTest;
-
+using Test.BackgroundJob;
 
 namespace Test
 {
@@ -172,15 +172,20 @@ namespace Test
             #endregion
 
             #region 委托相关特效
-            var funtest = new FunTest();
-            Func<int, int, int> add = (a, b) => a + b;
+            //var funtest = new FunTest();
+            //Func<int, int, int> add = (a, b) => a + b;
 
-            var result=funtest.Jisuan(add,1,3);
-            Console.WriteLine(result);
-            Console.WriteLine(funtest.Jisuan((a, b) => a - b, 5, 4));
-          
-            var ss=funtest.CreateExcute(p=>p>3,(a,b)=>a+b);
-            Console.WriteLine(ss);
+            //var result=funtest.Jisuan(add,1,3);
+            //Console.WriteLine(result);
+            //Console.WriteLine(funtest.Jisuan((a, b) => a - b, 5, 4));
+
+            //var ss=funtest.CreateExcute(p=>p>3,(a,b)=>a+b);
+            //Console.WriteLine(ss);
+            #endregion
+
+            #region 后台服务
+            var jobs = new BackgroundJobsTest();
+            jobs.BackgroundJobManagerTest();
             #endregion
 
             Console.ReadLine();
