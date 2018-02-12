@@ -2,6 +2,7 @@
 //using Castle.Core.Logging;
 using Castle.Core.Logging;
 using Castle.Facilities.Logging;
+using Castle.MicroKernel.Registration;
 using Enterprises.Framework.Dependency;
 using Enterprises.Framework.Logging;
 using Enterprises.Framework.Logging.Log4Net;
@@ -33,11 +34,12 @@ namespace Enterprises.Test.LogTest
             Logger.Info("this is Info");
 
 
-            //var logger = IocManager.Instance.Resolve<ILoggerFactory>().Create(typeof(LogTest));
-            //logger.Info("Should_Write_Logs_To_Text_File works!");
+            var logger = IocManager.Instance.Resolve<ILoggerFactory>().Create(typeof(LogTest));
+            logger.Info("Should_Write_Logs_To_Text_File works!");
 
-            //IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-            var logdemo = new LogDemo();
+            // 必须依赖注入的才可以输入日志，直接new LogDemo() 则不能
+            IocManager.Instance.IocContainer.Register(Component.For<ILogDemo>().ImplementedBy<LogDemo>().LifestyleTransient());
+            var logdemo = IocManager.Instance.Resolve<ILogDemo>();
             logdemo.TestLog();
         }
 
@@ -46,11 +48,15 @@ namespace Enterprises.Test.LogTest
 
     }
 
+    public interface ILogDemo
+    {
+        void TestLog();
+    }
 
     /// <summary>
     /// Log 属性注入
     /// </summary>
-    public class LogDemo
+    public class LogDemo: ILogDemo
     {
         public ILogger Logger { get; set; }
 
