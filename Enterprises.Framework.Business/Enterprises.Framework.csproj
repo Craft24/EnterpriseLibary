@@ -187,6 +187,11 @@
     <Compile Include="Exceptions\ExceptionData.cs" />
     <Compile Include="Exceptions\ValidationException.cs" />
     <Compile Include="Json\DateTimeJsonConverter.cs" />
+    <Compile Include="Json\JsonSerializationHelper.cs" />
+    <Compile Include="Linq\Expressions\PredicateBuilder.cs" />
+    <Compile Include="Linq\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Linq\IAsyncQueryableExecuter.cs" />
+    <Compile Include="Linq\NullAsyncQueryableExecuter.cs" />
     <Compile Include="Logging\IHasLogSeverity.cs" />
     <Compile Include="Logging\Log4Net\Log4NetLogger.cs" />
     <Compile Include="Logging\Log4Net\Log4NetLoggerFactory.cs" />

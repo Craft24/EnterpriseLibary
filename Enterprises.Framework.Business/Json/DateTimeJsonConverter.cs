@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 
-namespace Best.Utility.Tool
+namespace Enterprises.Framework.Json
 {
 
     /// <summary>
