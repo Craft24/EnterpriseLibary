@@ -127,6 +127,8 @@
     <Compile Include="Logging\OrchardLog4netFactory.cs" />
     <Compile Include="Logging\OrchardLog4netLogger.cs" />
     <Compile Include="LogTest\LogTest.cs" />
+    <Compile Include="Net\FakeHttpContext.cs" />
+    <Compile Include="Net\WebHelperTests.cs" />
     <Compile Include="Plugin\Config\BconConfigTest.cs" />
     <Compile Include="Plugin\Domain\AdManager\ADManagerTests.cs" />
     <Compile Include="Plugin\Domain\AD\AdTest.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="Plugin\Excel\UnitTest1.cs" />
     <Compile Include="Plugin\Mapper\ShengMapperTests.cs" />
     <Compile Include="TestBaseWithLocalIocManager.cs" />
+    <Compile Include="TestExtensions.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Utility\ConfigText.cs" />
     <Compile Include="Utility\FileSystemStorageProviderTest.cs" />
