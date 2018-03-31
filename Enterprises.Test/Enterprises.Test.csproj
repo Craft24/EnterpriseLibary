@@ -143,6 +143,7 @@
     <Compile Include="Utility\FileSystemStorageProviderTest.cs" />
     <Compile Include="Utility\HashTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\MapHelperTest.cs" />
     <Compile Include="Utility\LinqTest.cs" />
     <Compile Include="Utility\ReflectionUtilTest.cs" />
     <Compile Include="Utility\ReflectOnTests.cs" />

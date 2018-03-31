@@ -394,6 +394,7 @@
     <Compile Include="Utility\IOHelper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
     <Compile Include="Utility\ListExtensions.cs" />
+    <Compile Include="Utility\MapHelper.cs" />
     <Compile Include="Utility\NumberUtility.cs" />
     <Compile Include="Utility\RandomHelper.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
